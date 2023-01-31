@@ -64,16 +64,25 @@ public class Lambda {
     }
 
     public static void concatenateList(ArrayList<Integer> a, ArrayList<Integer> b) {
-        copy(a, b);
+        copyGeneric(a, b);
         System.out.println(a);
         System.out.println(b);
     }
 
-    public static void copy(ArrayList<Integer> from, ArrayList<Integer> to) {
+    //Generic method
+    public static <T> void copyGeneric(ArrayList<T> from, ArrayList<T> to) {
+        for( T a: from) {
+            to.add(a);
+        }
+    }
+
+    //Non generic method
+    public static <Integer> void copy(ArrayList<Integer> from, ArrayList<Integer> to) {
         for( Integer a: from) {
             to.add(a);
         }
     }
+
 
     
 }
