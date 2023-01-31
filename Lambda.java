@@ -15,8 +15,11 @@ public class Lambda {
         // thread.start();
 
         // System.out.println("In main thread");
-        streams();
+        // streams();
         
+        ArrayList<Integer> a = new ArrayList<>(Arrays.asList(1, 2,3));
+        ArrayList<Integer> b = new ArrayList<>(Arrays.asList(4,5,6));
+        concatenateList(a,b);
     }
 
     public static void streams() {
@@ -58,7 +61,19 @@ public class Lambda {
         System.out.println(sorted);
 
 
-
-
     }
+
+    public static void concatenateList(ArrayList<Integer> a, ArrayList<Integer> b) {
+        copy(a, b);
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    public static void copy(ArrayList<Integer> from, ArrayList<Integer> to) {
+        for( Integer a: from) {
+            to.add(a);
+        }
+    }
+
+    
 }
